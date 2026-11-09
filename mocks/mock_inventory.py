@@ -19,7 +19,7 @@ class Payload(BaseModel):
 
 @app.get("/api/inventory/{product_id}")
 def get_stock(product_id: int):
-    return {"productId": product_id, "quantity": STOCK.get(product_id, 0)}
+    return {"productId": product_id, "stock": STOCK.get(product_id, 0)}
 
 @app.post("/api/inventory/check")
 def check(p: Payload):
